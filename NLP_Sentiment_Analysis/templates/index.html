@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Text Analysis App</title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Text Analysis App</h1>
+            <form id="analysis-form" method="post" action="/analyze">
+                <div class="form-group">
+                    <label for="text-input">Enter your text:</label>
+                    <textarea id="text-input" name="text" rows="5"
+                        required>{{ original_text if original_text else '' }}</textarea>
+                </div>
+                <button type="submit" class="btn">Analyze</button>
+            </form>
+
+            {% if show_results %}
+            <div class="results">
+                <h2>Analysis Results</h2>
+
+                <div class="result-section">
+                    <h3>Original Text</h3>
+                    <p>{{ original_text }}</p>
+                </div>
+
+                <div class="result-section">
+                    <h3>Processed Text</h3>
+                    <p>{{ processed_text }}</p>
+                </div>
+
+                <div class="result-section">
+                    <h3>Sentiment Analysis</h3>
+                    <div class="sentiment-result">
+                        <span class="sentiment-label {{ sentiment.label.lower() }}">
+                            {{ sentiment.label }} ({{ "%.2f"|format(sentiment.score * 100) }}%)
+                        </span>
+                    </div>
+                </div>
+
+                <div class="result-section">
+                    <h3>Named Entities</h3>
+                    {% if entities %}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Entity</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for entity in entities %}
+                            <tr>
+                                <td>{{ entity.text }}</td>
+                                <td>{{ entity.label }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% else %}
+                    <p>No named entities found.</p>
+                    {% endif %}
+                </div>
+
+                <div class="result-section">
+                    <h3>Part-of-Speech Tags</h3>
+                    {% if pos_tags %}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Word</th>
+                                <th>POS Tag</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for tag in pos_tags %}
+                            <tr>
+                                <td>{{ tag.text }}</td>
+                                <td>{{ tag.pos }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% else %}
+                    <p>No POS tags available.</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </body>
+
+</html>
