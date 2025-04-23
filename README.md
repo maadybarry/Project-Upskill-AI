@@ -14,10 +14,6 @@ Build a web app where users input text (e.g., a tweet or review), and the model 
 - Extracted entities (People, Organizations, Locations)  
 Deploy using Streamlit or Flask.  
 
-**Why?**  
-- Demonstrates foundational NLP skills.
-- Easy to extend (e.g., add POS tagging).
-
 ---
 
 ## 2. Intermediate: AI-Powered Resume Parser with RAG
@@ -33,10 +29,6 @@ Build a system that:
 2. Uses RAG to match job descriptions (stored in Pinecone/ChromaDB) with the resume.
 3. Generates a "fit score" and suggests improvements.  
 
-**Why?**  
-- Shows real-world AI application (HR tech).
-- Combines NLP + RAG + Vector DBs.
-
 ---
 
 ## 3. Advanced: Custom AI Chatbot with Document Retrieval
@@ -51,10 +43,6 @@ Build a domain-specific chatbot (e.g., legal, medical, or tech support) that:
 - Ingests PDFs (e.g., research papers, manuals).
 - Uses RAG to fetch relevant answers.
 - Deploy via Flowise (UI) or FastAPI.  
-
-**Why?**  
-- Proves end-to-end LLM application skills.
-- Uses RAG + Vector DBs + LangChain (key for AI Engineer roles).
 
 ---
 
@@ -72,10 +60,6 @@ Create an automated moderation system that:
 3. Flags & stores harmful content in Pinecone.
 4. Triggers alerts (Slack/Email) via n8n.  
 
-**Why?**  
-- Shows real-time AI + automation (valuable in production systems).
-- Combines NLP + workflow tools (n8n) + DBs.
-
 ---
 
 ## Bonus: Fine-tune a Domain-Specific LLM
@@ -88,12 +72,4 @@ Create an automated moderation system that:
 Fine-tune a small LLM (e.g., Mistral-7B) on a custom dataset (e.g., medical Q&A, legal docs).  
 Deploy it with a simple API (FastAPI) and compare performance vs. base model.  
 
-**Why?**  
-- Proves deep LLM expertise (key for AI Engineer roles).
-
----
-
-## Final Tips:
-✔ Deploy projects (use Streamlit, Flask, or HuggingFace Spaces).  
-✔ Write blogs explaining your approach (helps in interviews).  
-✔ Use GitHub with good documentation (READMEs, demos).  
+--- 
